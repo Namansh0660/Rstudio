@@ -52,3 +52,26 @@ plot(x,y,type="l")
 #(iii) Between 15 and 25 minutes
 #(iv) Plot the Distribution 
 #(v) Table the Distriubtion
+
+mean = 20
+sd = 5
+
+#(i) P(X<15)
+less_than_15 = pnorm(15,mean,sd)
+less_than_15
+
+#(ii) P(X>=25) = 1 - P(X<25)
+more_than_25 = 1 - pnorm(25,mean,sd)
+more_than_25
+
+#(iii) P(15<X<25) = P(X<15) - P(X<25)
+btw_15_25 = pnorm(25,mean,sd) - pnorm(15,mean,sd)
+btw_15_25
+
+#(iv) Plot the distribution
+x = seq(5,35,0.1)
+y = dnorm(x,mean,sd)
+plot(x,y,type="l")
+
+#(v) Table the distribution
+data.frame(x,y)
